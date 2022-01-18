@@ -8,3 +8,10 @@ async function bootstrap() {
   await app.listen(configService.get('PORT'));
 }
 bootstrap();
+
+/**
+ * 1. Set up the models
+ * 2. Set up the dtos
+ * 3. Set up the validatorGuard
+ * 4. Set up the strategies
+ */
