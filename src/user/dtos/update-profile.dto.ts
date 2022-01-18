@@ -1,7 +1,5 @@
-export class SignUpDto {
+export class UpdateProfileDto {
   firstname: string;
   lastname: string;
-  email: string;
-  username: string;
   password: string;
 }

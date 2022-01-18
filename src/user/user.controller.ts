@@ -4,8 +4,11 @@ import {
   Patch,
   Post,
   NotImplementedException,
+  UsePipes,
 } from '@nestjs/common';
+import { JoiValidator } from 'src/joi-validator.pipe';
 import { UserService } from './user.service';
+import { updateProfileSchema } from './validation-schemas';
 
 @Controller('users')
 export class UserController {
@@ -27,6 +30,7 @@ export class UserController {
   }
 
   @Patch(':username')
+  @UsePipes(new JoiValidator(updateProfileSchema))
   updateProfile() {
     throw new NotImplementedException('update user: Not implemented');
   }
